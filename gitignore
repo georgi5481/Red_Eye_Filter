@@ -1,0 +1,10 @@
+build/
+Tests_From_Ocado/
+.project
+.cproject
+.settings/
+.autotools
+CMakeFiles
+CMakeCache.txt
+cmake_install.cmake
+Makefile
