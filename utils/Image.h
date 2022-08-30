@@ -18,6 +18,9 @@ struct PackedImage {
   std::vector<Pixel> pixels;
 };
 
+
+
+
 struct StrideImage {
   StrideImage(const Resolution& res);
 

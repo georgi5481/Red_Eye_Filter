@@ -9,8 +9,7 @@ class SolutionEvaluator {
 public:
   SolutionEvaluator() = delete;
 
-  static int32_t compare(const std::vector<T> &computed,
-                         const std::vector<T> &predefined) {
+  static int32_t compare(const std::vector<T> &computed, const std::vector<T> &predefined) {
 
     const size_t size = computed.size();
 

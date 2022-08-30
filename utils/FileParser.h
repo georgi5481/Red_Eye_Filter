@@ -27,7 +27,7 @@ public:
 
     FunctionTracer<std::chrono::milliseconds> tracer("generateData", "ms //not included into solution timings");	//will basically print out how many time elapsed between
 
-    constexpr auto inputFile = "input.bin";
+    constexpr auto inputFile = "input.bin";			//the name of the file
     int32_t err = FileParser<T>::parseFile(inputFile, outInputData);
     if (EXIT_SUCCESS != err) {
       std::cerr << "FileParser::parseFile() failed for file: " << inputFile
@@ -35,7 +35,7 @@ public:
       return EXIT_FAILURE;
     }
 
-    constexpr auto outputFile = "output.bin";		//the name of the file
+    constexpr auto outputFile = "output.bin";		//name of the output file
 
     err = FileParser<T>::parseFile(outputFile, outOutputData);	//calling the function down bellow
 
@@ -58,7 +58,7 @@ public:
 
     std::string line;
     std::getline(ifstream, line);	//read first line
-    std::istringstream istr(line);	//put it in the string
+    std::istringstream istr(line);	//put it in the string - we will use it again and again
 
     int32_t itemsCount = 0;
     istr >> itemsCount;		//we need the first number as an integer cuz it will set the number of objects in the vector
@@ -67,25 +67,25 @@ public:
 
     clearValues(line, istr);	//a function to clear the stream and string
 
-    Resolution res;
+    Resolution res;		//create an object to set the width and height of the image
     for (int32_t i = 0; i < itemsCount; ++i) {
       std::getline(ifstream, line);
-      istr.str(line);
+      istr.str(line);		//read the line with the resolution
 
       //parse resolution
-      istr >> res.width >> res.height;
-      clearValues(line, istr);
+      istr >> res.width >> res.height;		//input it
+      clearValues(line, istr);			//clear again the stream
 
       //create item
-      T &item = outData.emplace_back(res);
+      T &item = outData.emplace_back(res);	//put the object with the resolution
 
-      std::getline(ifstream, line);
-      istr.str(line);
+      std::getline(ifstream, line);		//will get all the data with the pixels till the new two integers for the next pixels
+      istr.str(line);		//fill the stream with the same information
 
       //fill item data
-      istr >> item;
+      istr >> item;		//place the info into the object
 
-      clearValues(line, istr);
+      clearValues(line, istr);		//empty the stream and string
     }
 
     return EXIT_SUCCESS;
