@@ -61,10 +61,11 @@ public:
     std::istringstream istr(line);	//put it in the string
 
     int32_t itemsCount = 0;
-    istr >> itemsCount;
+    istr >> itemsCount;		//we need the first number as an integer cuz it will set the number of objects in the vector
 
-    outData.reserve(itemsCount);
-    clearValues(line, istr);
+    outData.reserve(itemsCount);	//lenghted the vector with the needed size
+
+    clearValues(line, istr);	//a function to clear the stream and string
 
     Resolution res;
     for (int32_t i = 0; i < itemsCount; ++i) {
