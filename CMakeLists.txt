@@ -1,8 +1,7 @@
 cmake_minimum_required(VERSION 3.5.1)
 
-project(Red_Eye_Filter LANGUAGES CXX)	#first instance the project and the language
+project(Red_Eye_Filter LANGUAGES CXX)
 
-#find_program(CMAKE_CXX_COMPILER NAMES $ENV{CXX} g++ PATHS ENV PATH NO_DEFAULT_PATH)
 
 set(_BASE_DIR ${CMAKE_CURRENT_SOURCE_DIR})
 
@@ -34,6 +33,11 @@ set_target_properties(
 		CXX_EXTENSIONS NO
 )
 
+if(NOT CMAKE_BUILD_TYPE)
+  set(CMAKE_BUILD_TYPE Release)
+  set(CMAKE_CXX_FLAGS_RELEASE "-O3")
+endif()
+
 
 target_compile_options(
 		${PROJECT_NAME}
@@ -57,7 +61,7 @@ target_compile_options(
 		-Wduplicated-cond
 		-Wduplicated-branches
 		-Wnull-dereference
-	)
+)
 
 
 target_include_directories(

@@ -14,7 +14,7 @@ public:
   void compute([[maybe_unused]]std::vector<StrideImage> &images);
 
 private:
-  void pixelRedEyeFilter(std::vector<Pixel> & pixels);
+  inline void pixelRedEyeFilter(std::vector<Pixel> & pixels);
 };
 
 #endif /* SOLUTION_H_ */

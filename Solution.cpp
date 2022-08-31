@@ -5,8 +5,8 @@
 
 
 //C++ system includes
-#include <cstdint>
-#include <iostream>
+//#include <cstdint>
+//#include <iostream>
 
 
 //3rd-party includes
@@ -15,16 +15,6 @@
 //Own includes
 #include "utils/CommonDefines.h"
 
-
-inline void Solution::pixelRedEyeFilter(std::vector<Pixel>& pixels){
-
-	for(auto &pixelData : pixels){
-
-		if(pixelData.red >= 200 ){
-			pixelData.red -= 150;
-		}
-	}
-}
 
 void Solution::compute([[maybe_unused]]std::vector<PackedImage> &images) {
 	FunctionTracer<std::chrono::milliseconds> tracer("compute", "ms");
@@ -36,14 +26,23 @@ void Solution::compute([[maybe_unused]]std::vector<PackedImage> &images) {
 
 }
 
+inline void Solution::pixelRedEyeFilter(std::vector<Pixel>& pixels){
+
+	for(auto &pixelData : pixels){
+
+		if(pixelData.red >= 200 ){
+			pixelData.red -= 150;
+		}
+	}
+}
+
+
 
 
 void Solution::compute([[maybe_unused]]std::vector<StrideImage> &images) {
 	FunctionTracer<std::chrono::milliseconds> tracer("compute", "ms");
 	//TODO: fill solution
-
-
-
+	//no need for this one
 }
 
 
