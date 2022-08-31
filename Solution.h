@@ -12,6 +12,9 @@ public:
   void compute([[maybe_unused]]std::vector<PackedImage> &images);
 
   void compute([[maybe_unused]]std::vector<StrideImage> &images);
+
+private:
+  void pixelReadEyeFilter(Pixel & pixelData);
 };
 
 #endif /* SOLUTION_H_ */

@@ -76,7 +76,7 @@ public:
 
       //parse resolution
       istr >> res.width >> res.height;		//input it
-      clearValues(line, istr);			//clear again the stream
+      clearValues(line, istr);				//clear again the stream
 
       //create item
       T &item = outData.emplace_back(res);	//put the object with the resolution
