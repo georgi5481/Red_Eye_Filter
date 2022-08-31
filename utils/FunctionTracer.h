@@ -1,12 +1,13 @@
 #ifndef FUNCTIONTRACER_H_
 #define FUNCTIONTRACER_H_
-
+//C++ includes
 #include <chrono>
 #include <string>
 #include <iostream>
+//Own includes
 
 template <typename Ratio>
-class FunctionTracer {
+class FunctionTracer {				//this whole class is basically made to calculate the elapsed times
 public:
   FunctionTracer(std::string_view funcName, std::string_view postfix): mFuncName(funcName), mPostfix(postfix) {
     std::cout << "[" << mFuncName << "] Starting time measurement " << std::endl; //prints starting to count

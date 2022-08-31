@@ -1,7 +1,8 @@
 #ifndef COMMONDEFINES_H_
 #define COMMONDEFINES_H_
-
+//C++ headers
 #include <cstdint>
+//Own includes
 
 struct Resolution {
   bool operator==(const Resolution &other) const {

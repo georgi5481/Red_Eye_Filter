@@ -1,23 +1,17 @@
 #ifndef SOLUTION_H_
 #define SOLUTION_H_
+//C++ headers
 
-#include <cstdint>
-
+//Own includes
 #include "utils/Image.h"
 #include "utils/FunctionTracer.h"
-#include<iostream>
+//Forward declarations
 
 class Solution {
 public:
-  void compute([[maybe_unused]]std::vector<PackedImage> &images) {
-    FunctionTracer<std::chrono::milliseconds> tracer("compute", "ms");
-    //TODO: fill solution
-  }
+  void compute([[maybe_unused]]std::vector<PackedImage> &images);
 
-  void compute([[maybe_unused]]std::vector<StrideImage> &images) {
-    FunctionTracer<std::chrono::milliseconds> tracer("compute", "ms");
-    //TODO: fill solution
-  }
+  void compute([[maybe_unused]]std::vector<StrideImage> &images);
 };
 
 #endif /* SOLUTION_H_ */

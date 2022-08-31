@@ -1,9 +1,14 @@
+//Corresponding header
 #include "Image.h"
 
+//C++ headers
 #include <fstream>
 #include <iostream>
 #include <istream>
 #include <cstdint>
+
+//Own includes
+
 
 namespace {
 	Pixel parsePixel(uint32_t inputRgba) {
@@ -15,6 +20,8 @@ namespace {
 	  return px;
 	}
 }
+
+
 
 PackedImage::PackedImage(const Resolution &res) : resolution(res), pixels(res.width * res.height) {	//input the struct and get the info from it
 }

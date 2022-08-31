@@ -1,11 +1,13 @@
 #ifndef IMAGE_H_
 #define IMAGE_H_
 
+//C++ headers
 #include <cstdint>
 #include <vector>
 #include <istream>
 #include <iosfwd>
 
+//Own headers
 #include "CommonDefines.h"
 
 struct PackedImage {
@@ -17,7 +19,6 @@ struct PackedImage {
   Resolution resolution;
   std::vector<Pixel> pixels;
 };
-
 
 
 

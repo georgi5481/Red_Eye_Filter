@@ -1,12 +1,14 @@
 #ifndef FILEPARSER_H_
 #define FILEPARSER_H_
-
+//C++ headers
 #include <string>
 #include <vector>
 #include <fstream>
 #include <sstream>
 #include <iostream>
 #include <chrono>
+
+//Own includes
 #include "CommonDefines.h"
 #include "FunctionTracer.h"
 
@@ -27,7 +29,7 @@ public:
 
     FunctionTracer<std::chrono::milliseconds> tracer("generateData", "ms //not included into solution timings");	//will basically print out how many time elapsed between
 
-    constexpr auto inputFile = "input.bin";			//the name of the file
+    constexpr auto inputFile = "input.bin";							//path and name of the file
     int32_t err = FileParser<T>::parseFile(inputFile, outInputData);
     if (EXIT_SUCCESS != err) {
       std::cerr << "FileParser::parseFile() failed for file: " << inputFile

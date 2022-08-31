@@ -1,8 +1,10 @@
 #ifndef SOLUTIONEVALUATOR_H_
 #define SOLUTIONEVALUATOR_H_
-
+//C++ headers
 #include <cstdint>
 #include <vector>
+
+//Own includes
 
 template <typename T>
 class SolutionEvaluator {
@@ -19,7 +21,7 @@ public:
     }
 
     for (size_t i = 0; i < size; ++i) {
-      if (computed[i] == predefined[i]) {		//printing the images
+      if (computed[i] == predefined[i]) {		//checks the images
         continue;
       }
 
@@ -27,7 +29,7 @@ public:
       return EXIT_FAILURE;
     }
 
-    return EXIT_SUCCESS;		//we printed all the images so we exit
+    return EXIT_SUCCESS;
   }
 };
 

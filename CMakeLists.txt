@@ -8,18 +8,20 @@ set(_BASE_DIR ${CMAKE_CURRENT_SOURCE_DIR})
 
 add_executable(
 	${PROJECT_NAME} 	
-
+	
+#the header Files only
 	${_BASE_DIR}/utils/CommonDefines.h
 	${_BASE_DIR}/utils/EyePatterns.h
 	${_BASE_DIR}/utils/FileParser.h
 	${_BASE_DIR}/utils/FunctionTracer.h
 	${_BASE_DIR}/utils/SolutionEvaluator.h
-	${_BASE_DIR}/utils/Image.h
 	
+	
+	${_BASE_DIR}/utils/Image.h
 	${_BASE_DIR}/utils/Image.cpp 
 
-	
 	${_BASE_DIR}/Solution.h
+	${_BASE_DIR}/Solution.cpp
 	${_BASE_DIR}/main.cpp
 	)
 
