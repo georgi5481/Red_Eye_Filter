@@ -19,12 +19,17 @@ https://drive.google.com/file/d/1nb1PiP0FOEng8BxY4CdfOA2SSGVX2O6j/view
 To compile on Linux:
 Open terminal and change to the directory of the empty release folder provided in the project. Example path: "/usr/The/current/path/Red_Eye_Filter/Release/".
 And write in the terminal:    
+
 cmake ..    
+
 make -j
-(It will use the automatically selected generator - Unix Makefiles, unless specified otherwise)
+
+(It will compile under the automatically selected generator - Unix Makefiles, unless specified otherwise)
 
 To compile on Windows:
 Open cmd and change to the directory of the release folder. Example path: "C:\The\current\path\Red_Eye_Filter\Release>".
-And write in the console:     
+And write in the console: 
+
 cmake -G "MinGW Makefiles" ..
+
 make -j
