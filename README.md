@@ -1,16 +1,9 @@
 # Red_Eye_Filter entry task for Ocado technology
 
-For installing :
- Check your OS first.
-  
-If you work on Linux (tested on Ubuntu):
-    - You need to make sure you already have installed CMake at least 3.5.1. If not please install it via comand in terminal:
-      sudo apt install cmake
-    -Make sure to install the standard libraries for getting the C++17 effect. Install package from consonle command -
-      sudo apt install build-essential
-      
+For compiling cross platform :
+ Check your OS first.     
      
-    
+
 If on Windows (tested on Windows 11): 
     - You need to make sure you already have installed CMake at least 3.5.1.  If you do not have it installed please download it. Link : 
     https://cmake.org/download/
