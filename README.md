@@ -26,6 +26,7 @@ make -j
 
 (It will compile under the automatically selected generator - Unix Makefiles, unless specified otherwise)
 
+
 To compile on Windows:
 Open cmd and change to the directory of the release folder. Example path: "C:\The\current\path\Red_Eye_Filter\Release>".
 And write in the console: 
