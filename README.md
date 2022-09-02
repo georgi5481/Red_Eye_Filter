@@ -1,4 +1,4 @@
-# Red_Eye_Filter entry task for Ocado technology
+# Red_Eye_Filter entry task provided by Ocado technology
 
 For compiling cross platform :
  Check your OS first.     
