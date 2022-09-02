@@ -21,22 +21,10 @@ void Solution::compute([[maybe_unused]]std::vector<PackedImage> &images) {
 	//TODO: fill solution
 
 	for(auto &image : images){
-	pixelRedEyeFilter(image.pixels);
+		pixelRedEyeFilter(image.pixels);
 	}
 
 }
-
-inline void Solution::pixelRedEyeFilter(std::vector<Pixel>& pixels){
-
-	for(auto &pixelData : pixels){
-
-		if(pixelData.red >= 200 ){
-			pixelData.red -= 150;
-		}
-	}
-}
-
-
 
 
 void Solution::compute([[maybe_unused]]std::vector<StrideImage> &images) {
@@ -47,4 +35,14 @@ void Solution::compute([[maybe_unused]]std::vector<StrideImage> &images) {
 
 
 
+
+inline void Solution::pixelRedEyeFilter(std::vector<Pixel>& pixels){
+
+	for(auto &pixelData : pixels){
+
+		if(pixelData.red >= 200 ){
+			pixelData.red -= 150;
+		}
+	}
+}
 
