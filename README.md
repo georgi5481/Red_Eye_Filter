@@ -21,7 +21,7 @@ If on Windows (tested on Windows 11):
     https://techdecodetutorials.com/how-to-install-mingw-c-c-compiler-in-windows-11/
     
     
-Please place the .bin files in the release folder. Or download them from the link: 
+Please place the big .bin files in the release folder. Or download them from the link: 
 https://drive.google.com/file/d/1nb1PiP0FOEng8BxY4CdfOA2SSGVX2O6j/view
 
 To compile on Linux:

@@ -36,7 +36,7 @@ void Solution::compute([[maybe_unused]]std::vector<StrideImage> &images) {
 
 
 
-inline void Solution::pixelRedEyeFilter(std::vector<Pixel>& pixels){
+void Solution::pixelRedEyeFilter(std::vector<Pixel>& pixels){
 
 	for(auto &pixelData : pixels){
 

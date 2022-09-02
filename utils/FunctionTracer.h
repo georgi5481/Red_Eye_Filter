@@ -7,15 +7,15 @@
 //Own includes
 
 template <typename Ratio>
-class FunctionTracer {				//this whole class is basically made to calculate the elapsed times
+class FunctionTracer {
 public:
   FunctionTracer(std::string_view funcName, std::string_view postfix): mFuncName(funcName), mPostfix(postfix) {
-    std::cout << "[" << mFuncName << "] Starting time measurement " << std::endl; //prints starting to count
+    std::cout << "[" << mFuncName << "] Starting time measurement " << std::endl;
   }
 
   ~FunctionTracer() {
     const int64_t duration = captureDuration();
-    std::cout << "[" << mFuncName << "] took: " << duration << ' ' << mPostfix << std::endl;	//prints out the time elapsed
+    std::cout << "[" << mFuncName << "] took: " << duration << ' ' << mPostfix << std::endl;
   }
 
   int64_t captureDuration() const {

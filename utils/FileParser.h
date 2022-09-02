@@ -27,9 +27,9 @@ public:
 
   static int32_t generateData(std::vector<T> &outInputData, std::vector<T> &outOutputData) {
 
-    FunctionTracer<std::chrono::milliseconds> tracer("generateData", "ms //not included into solution timings");	//will basically print out how many time elapsed between
+    FunctionTracer<std::chrono::milliseconds> tracer("generateData", "ms //not included into solution timings");
 
-    constexpr auto inputFile = "input.bin";							//path and name of the file
+    constexpr auto inputFile = "input.bin";
     int32_t err = FileParser<T>::parseFile(inputFile, outInputData);
     if (EXIT_SUCCESS != err) {
       std::cerr << "FileParser::parseFile() failed for file: " << inputFile
@@ -37,9 +37,9 @@ public:
       return EXIT_FAILURE;
     }
 
-    constexpr auto outputFile = "output.bin";		//name of the output file
+    constexpr auto outputFile = "output.bin";
 
-    err = FileParser<T>::parseFile(outputFile, outOutputData);	//calling the function down bellow
+    err = FileParser<T>::parseFile(outputFile, outOutputData);
 
     if (EXIT_SUCCESS != err) {
       std::cerr << "FileWritter::generateFile() failed for file: " << inputFile << std::endl;
@@ -51,7 +51,7 @@ public:
 
   static int32_t parseFile(const std::string &fileLocation, std::vector<T> &outData) {
 
-    std::ifstream ifstream(fileLocation, std::ios::in | std::ios::binary);	//reading the file
+    std::ifstream ifstream(fileLocation, std::ios::in | std::ios::binary);
 
     if (!ifstream) {
       std::cout << "Error, could not load file: " << fileLocation << std::endl;
@@ -59,35 +59,35 @@ public:
     }
 
     std::string line;
-    std::getline(ifstream, line);	//read first line
-    std::istringstream istr(line);	//put it in the string - we will use it again and again
+    std::getline(ifstream, line);
+    std::istringstream istr(line);
 
     int32_t itemsCount = 0;
-    istr >> itemsCount;		//we need the first number as an integer cuz it will set the number of objects in the vector
+    istr >> itemsCount;
 
-    outData.reserve(itemsCount);	//lenghted the vector with the needed size
+    outData.reserve(itemsCount);
 
-    clearValues(line, istr);	//a function to clear the stream and string
+    clearValues(line, istr);
 
-    Resolution res;		//create an object to set the width and height of the image
+    Resolution res;
     for (int32_t i = 0; i < itemsCount; ++i) {
       std::getline(ifstream, line);
-      istr.str(line);		//read the line with the resolution
+      istr.str(line);
 
       //parse resolution
-      istr >> res.width >> res.height;		//input it
-      clearValues(line, istr);				//clear again the stream
+      istr >> res.width >> res.height;
+      clearValues(line, istr);
 
       //create item
-      T &item = outData.emplace_back(res);	//put the object with the resolution
+      T &item = outData.emplace_back(res);
 
-      std::getline(ifstream, line);		//will get all the data with the pixels till the new two integers for the next pixels
-      istr.str(line);		//fill the stream with the same information
+      std::getline(ifstream, line);
+      istr.str(line);
 
       //fill item data
-      istr >> item;		//place the info into the object
+      istr >> item;
 
-      clearValues(line, istr);		//empty the stream and string
+      clearValues(line, istr);
     }
 
     return EXIT_SUCCESS;

@@ -15,13 +15,13 @@ public:
 
     const size_t size = computed.size();
 
-    if (size != predefined.size()) {		//checks if we have different number of images as the output
+    if (size != predefined.size()) {
       std::cout << "Computed size: " << size << " vs Predefined size: " << predefined.size() << " mismatch" << std::endl;
       return EXIT_FAILURE;
     }
 
     for (size_t i = 0; i < size; ++i) {
-      if (computed[i] == predefined[i]) {		//checks the images
+      if (computed[i] == predefined[i]) {
         continue;
       }
 

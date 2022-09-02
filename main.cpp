@@ -19,19 +19,19 @@ int32_t main([[maybe_unused]]int32_t argc, [[maybe_unused]]char *argv[]) {
   std::vector<Image> inputImages;
   std::vector<Image> outputImages;
 
-  int32_t err = FileParser<Image>::generateData(inputImages, outputImages);	//gives the whole image
+  int32_t err = FileParser<Image>::generateData(inputImages, outputImages);
 
-  if (EXIT_SUCCESS != err) {							//checks for errors
+  if (EXIT_SUCCESS != err) {
     std::cerr << "FileParser::generateData() failed" << std::endl;
     return EXIT_FAILURE;
   }
 
-  Solution solution;			//our solution is made as an object
-  solution.compute(inputImages);		//we call our compute method we implemented and give the input image
+  Solution solution;
+  solution.compute(inputImages);
 
-  err = SolutionEvaluator<Image>::compare(inputImages, outputImages);			//method for printing the images and compairing them by the process
+  err = SolutionEvaluator<Image>::compare(inputImages, outputImages);
 
-  if (EXIT_SUCCESS != err) {		//checks for a missmatch at the method upwards
+  if (EXIT_SUCCESS != err) {
     std::cout << "Solution status - [FAIL]" << std::endl;
     return EXIT_FAILURE;
   }
