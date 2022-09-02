@@ -44,3 +44,9 @@ cmake -G "MinGW Makefiles" ..
 make -j
 
 (It will compile under the defined generator - MinGW)
+
+All you need to do is execute the program via terminal/cmd. Type :
+
+./Red_Eye_Filter
+
+And you should be able to see the text [SUCCESS} with about ~ 2ms delay of the program to execute.
