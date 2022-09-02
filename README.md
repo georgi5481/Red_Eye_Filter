@@ -1,7 +1,7 @@
 # Red_Eye_Filter entry task provided by Ocado technology
 
 For compiling cross platform :
- Check your OS first.     
+  First please check your OS.     
      
 If on Linux (tested on Ubuntu): 
     -You need to make sure you have installed the g++/GNU compiler, GNU debugger etc. If you do not have them please install them via terminal with command:
