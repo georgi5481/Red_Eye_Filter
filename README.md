@@ -3,7 +3,15 @@
 For compiling cross platform :
  Check your OS first.     
      
-
+If on Linux (tested on Ubuntu): 
+    -You need to make sure you have installed the g++/GNU compiler, GNU debugger etc. If you do not have them please install them via terminal with command:
+    sudo apt install build-essential
+    -Make sure you install CMake. Use comand in terminal:
+    sudo apt-get install cmake
+    -If you already have it installed note that it is at least version 3.5.1. Use comand in terminal: 
+    cmake --version
+    
+    
 If on Windows (tested on Windows 11): 
     - You need to make sure you already have installed CMake at least 3.5.1.  If you do not have it installed please download it. Link : 
     https://cmake.org/download/
@@ -13,11 +21,11 @@ If on Windows (tested on Windows 11):
     https://techdecodetutorials.com/how-to-install-mingw-c-c-compiler-in-windows-11/
     
     
-Please place the to .bin files in the release folder. Or download them from the link: 
+Please place the .bin files in the release folder. Or download them from the link: 
 https://drive.google.com/file/d/1nb1PiP0FOEng8BxY4CdfOA2SSGVX2O6j/view
 
 To compile on Linux:
-Open terminal and change to the directory of the empty release folder provided in the project. Example path: "/usr/The/current/path/Red_Eye_Filter/Release/".
+Open terminal and change to the directory of the release folder provided in the project. Example path: "/usr/The/current/path/Red_Eye_Filter/Release/".
 And write in the terminal:    
 
 cmake ..    
@@ -34,3 +42,5 @@ And write in the console:
 cmake -G "MinGW Makefiles" ..
 
 make -j
+
+(It will compile under the defined generator - MinGW)
